@@ -1,0 +1,6 @@
+<form action="" method="POST" >
+<a href="{% url 'home' %}">Go Backe</a>
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Submit">
+</form>

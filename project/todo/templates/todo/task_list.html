@@ -1,0 +1,30 @@
+<a href="{% url 'login'%}">login</a>
+<a href="{% url 'logout'%}">logout</a>
+<hr>
+<h1> hello </h1>
+<a href="{% url 'create'%}">Add Task</a>
+
+<form method='GET' >
+<input type="text" name='search' value="{{search_input}}">
+</form>
+
+<table>
+    <thead>
+        <tr>
+        <th>task to do </th>
+        </tr>
+    </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{task}}</td>
+                
+            </tr>
+            <td>
+                <td><a href="{% url 'task' task.id %}">show</a></td>
+                <td><a href="{% url 'update' task.id %}">update</a></td>
+                <td><a href="{% url 'delete' task.id %}">delete</a></td>
+            </td>
+            {% endfor %}
+    </tbody>
+</table>
